@@ -1,6 +1,6 @@
 {
     "compilerOptions": {
-        "target": "es5",
+        "target": "esnext",
         "strict": true,
         "noImplicitAny": false,
         "noImplicitThis": false,
@@ -9,7 +9,7 @@
         "noUnusedLocals": true,
         "downlevelIteration": true,
         "forceConsistentCasingInFileNames": true,
-        "module": "commonjs",
+        "module": "esnext",
         "moduleResolution": "node",
         "outDir": "lib",
         "removeComments": false,
