@@ -1,0 +1,32 @@
+{
+  "name": "fn-oop-example",
+  "version": "1.0.0",
+  "main": "index.js",
+  "description": "Showing some diffrences between declarative and imperative approaches to solving problems with code.",
+  "scripts": {
+    "pack": "",
+    "build": "tsc",
+    "test": "jest --bail --config ./.configs/jest.config.js --runInBand",
+    "tdd": "jest --verbose --config ./.configs/jest.config.js --runInBand --watchAll",
+    "test:coverage": "jest --coverage --bail --config ./.configs/jest.config.js --runInBand"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "devDependencies": {
+    "@types/node": "12.7.1",
+    "@types/jest": "23.3.13",
+    "babel-preset-env": "1.7.0",
+    "jest": "23.6.0",
+    "jest-cli": "23.6.0",
+    "ts-jest": "23.10.5",
+    "ts-node": "8.0.3",
+    "typescript": "3.5.3",
+    "webpack": "4.39.1",
+    "webpack-raw-bundler": "1.3.6",
+    "webpack-bundle-analyzer": "3.1.0",
+    "webpack-cli": "3.3.6"
+  },
+  "dependencies": {}
+}
