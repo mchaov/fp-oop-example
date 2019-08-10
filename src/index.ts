@@ -1,6 +1,6 @@
-import { renderTodoItem, makeTodoItem, TodoItem, addItemToList } from "./functional/index.js";
+import { renderTodoItemToHTML, makeInCompletedTodoItem, TodoItem, addItemToList } from "./functional/index.js";
 
-var state: TodoItem[] = ["item1", "item2", "item3"].map(x => makeTodoItem(x));
+var state: TodoItem[] = ["item1", "item2", "item3"].map(makeInCompletedTodoItem);
 
 const mainUI = `
 <input value="" id="newItem" />
@@ -18,13 +18,13 @@ function renderUI(domID, content) {
 function addItem() {
     let input: HTMLInputElement | null = document.getElementById("newItem") as any;
     if (input) state = addItemToList(
-        makeTodoItem(input.value),
+        makeInCompletedTodoItem(input.value),
         state
     )
 }
 
 function renderFPList() {
-    renderUI("functional", state.map(renderTodoItem).join("\n"));
+    renderUI("functional", state.map(renderTodoItemToHTML).join("\n"));
 }
 
 function main() {

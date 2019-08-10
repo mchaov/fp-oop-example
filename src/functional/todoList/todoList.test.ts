@@ -1,16 +1,34 @@
-import { makeTodoItem, addItemToList, removeItemByIndex, todoSetCompleted } from "./todoList";
+import {
+    makeTodoItem,
+    makeCompletedTodoItem,
+    makeInCompletedTodoItem,
+    addItemToList,
+    removeItemByIndex,
+    todoSetCompleted
+} from "./todoList";
 
 makeTodoItem;
 
-describe("TodoList functiona suite", () => {
+describe("TodoList functional suite", () => {
     it("makeTodoItem -> returns todo items if called with string", () => {
+        let completeItem = { text: "test", completed: true };
+        let incompleteItem = { text: "test", completed: false };
 
         expect(
-            makeTodoItem("test")
-        )
-            .toEqual(
-                { text: "test", completed: false }
-            );
+            makeTodoItem(false, "test")
+        ).toEqual(incompleteItem);
+
+        expect(
+            makeInCompletedTodoItem("test")
+        ).toEqual(incompleteItem);
+
+        expect(
+            makeTodoItem(true, "test")
+        ).toEqual(completeItem);
+
+        expect(
+            makeCompletedTodoItem("test")
+        ).toEqual(completeItem);
 
     });
 
