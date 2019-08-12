@@ -8,16 +8,13 @@ export function makeTodoItem(completed: boolean, todo: string): TodoItem {
 }
 
 export function todoSetComplete(isCompleted: boolean, index: number, list: TodoItem[]) {
-    return [
-        ...list.filter(isNotAtIndex.bind(undefined, index)),
-        makeTodoItem(isCompleted, list[index].text)
-    ];
+    return list.map((item, i) => i === index ? makeTodoItem(isCompleted, item.text) : item);
 }
 
 export function addItemToList(item: TodoItem, list: TodoItem[]) {
     return [...list, item];
 }
 
-export function removeItemByIndex(index: number, list: TodoItem[]) {
+export function removeItemAtIndex(index: number, list: TodoItem[]) {
     return list.filter(isNotAtIndex.bind(undefined, index));
 }
