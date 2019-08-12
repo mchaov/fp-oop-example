@@ -13,10 +13,10 @@ describe("TodoList OOP suite", () => {
 
         expect(inst.completed).toBe(false);
 
-        inst.setCompleted(true);
+        inst.setComplete(true);
         expect(inst.completed).toBe(true);
 
-        inst.setCompleted(false);
+        inst.setComplete(false);
         expect(inst.completed).toBe(false);
     });
 
@@ -61,7 +61,7 @@ describe("TodoList OOP suite", () => {
             { text: "test2", completed: false }
         ]);
 
-        inst.updateItem(1, true);
+        inst.updateItemCompletedState(1, true);
 
         expect(inst.state).toEqual([
             { text: "test", completed: false },

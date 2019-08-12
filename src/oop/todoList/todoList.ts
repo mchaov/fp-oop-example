@@ -9,13 +9,13 @@ export class TodoItem implements ITodoItem {
         this.completed = completed;
     }
 
-    setCompleted(done: boolean) {
+    setComplete(done: boolean) {
         this.completed = done;
     }
 }
 
 export class TodoList {
-    state: TodoItem[]
+    state: TodoItem[] = [];
 
     constructor(items?: string[]) {
         if (items) {
@@ -23,8 +23,6 @@ export class TodoList {
             for (let i = 0; i < items.length; i++) {
                 this.state[i] = this.makeItem(items[i], false);
             }
-        } else {
-            this.state = [];
         }
     }
 
@@ -34,10 +32,10 @@ export class TodoList {
 
     removeItemAtIndex(index: number) {
         let newState: TodoItem[] = [];
-        for (let i = 0; i < this.state.length; i++) {
+        for (let i = 0; i < this.state.length; i++)
             if (i !== index)
                 newState.push(this.state[i]);
-        }
+
         this.state = newState;
     }
 
@@ -47,10 +45,7 @@ export class TodoList {
         );
     }
 
-    updateItem(index: number, completed: boolean) {
-        let item = this.state[index];
-        if (item) {
-            item.setCompleted(completed);
-        }
+    updateItemCompletedState(index: number, completed: boolean) {
+        this.state[index].setComplete(completed);
     }
 }

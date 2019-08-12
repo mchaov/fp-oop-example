@@ -1,14 +1,20 @@
 import {
     makeTodoItem,
-    makeCompletedTodoItem,
-    makeInCompletedTodoItem,
     addItemToList,
     removeItemByIndex,
-    todoSetCompleted
+    todoSetComplete
 } from "./todoList";
 
-makeTodoItem;
+import { renderTodoItemToHTML } from "./todoListUI";
 
+describe("TodoList UI suite", () => {
+    it("", () => {
+        let todoItem = { text: "test", completed: false };
+        expect(renderTodoItemToHTML(todoItem)).toBe(
+            `<span>${todoItem.text} is done: ${todoItem.completed}</span>`
+        )
+    })
+});
 describe("TodoList functional suite", () => {
     it("makeTodoItem -> returns todo items if called with string", () => {
         let completeItem = { text: "test", completed: true };
@@ -19,17 +25,8 @@ describe("TodoList functional suite", () => {
         ).toEqual(incompleteItem);
 
         expect(
-            makeInCompletedTodoItem("test")
-        ).toEqual(incompleteItem);
-
-        expect(
             makeTodoItem(true, "test")
         ).toEqual(completeItem);
-
-        expect(
-            makeCompletedTodoItem("test")
-        ).toEqual(completeItem);
-
     });
 
     it("addItemToList -> adds item to the end of the list", () => {
@@ -86,11 +83,11 @@ describe("TodoList functional suite", () => {
             );
     });
 
-    it("todoSetCompleted -> marks todo item as done", () => {
+    it("todoSetComplete -> marks todo item as done", () => {
         const list = [{ text: "item1", completed: false }];
 
         expect(
-            todoSetCompleted(true, 0, list)
+            todoSetComplete(true, 0, list)
         )
             .toEqual(
                 [{ text: "item1", completed: true }]

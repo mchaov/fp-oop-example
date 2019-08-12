@@ -1,6 +1,7 @@
-import { renderTodoItemToHTML, makeInCompletedTodoItem, TodoItem, addItemToList } from "./functional/index.js";
+import { renderTodoItemToHTML, TodoItem, addItemToList, makeTodoItem } from "./functional/index.js";
 
-var state: TodoItem[] = ["item1", "item2", "item3"].map(makeInCompletedTodoItem);
+const makeIncompleteTodoItem = makeTodoItem.bind(undefined, false);
+var state: TodoItem[] = ["item1", "item2", "item3"].map(makeIncompleteTodoItem);
 
 const mainUI = `
 <input value="" id="newItem" />
@@ -18,7 +19,7 @@ function renderUI(domID, content) {
 function addItem() {
     let input: HTMLInputElement | null = document.getElementById("newItem") as any;
     if (input) state = addItemToList(
-        makeInCompletedTodoItem(input.value),
+        makeIncompleteTodoItem(input.value),
         state
     )
 }
