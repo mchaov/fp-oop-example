@@ -12,13 +12,13 @@ const mainUI = `
 <table>
     <tr>
         <th>Functional</th>
-        <!--<th>OOP</th>
-         <th>Hybrid</th> -->
+        <th>OOP</th>
+        <th>Hybrid</th>
     </tr>
     <tr>
         <td><div class="wrapper" id="functional"></div></td>
-        <!--<td><div class="wrapper" id="oop"></div></td>
-         <td><div class="wrapper" id="hybrid"></div></td> -->
+        <td><div class="wrapper" id="oop"></div></td>
+        <td><div class="wrapper" id="hybrid"></div></td>
     </tr>
 </table>
 `;

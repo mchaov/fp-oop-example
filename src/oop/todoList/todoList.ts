@@ -32,9 +32,11 @@ export class TodoList {
 
     removeItemAtIndex(index: number) {
         let newState: TodoItem[] = [];
-        for (let i = 0; i < this.state.length; i++)
-            if (i !== index)
+        for (let i = 0; i < this.state.length; i++) {
+            if (i !== index) {
                 newState.push(this.state[i]);
+            }
+        }
 
         this.state = newState;
     }
