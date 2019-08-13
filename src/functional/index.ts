@@ -13,7 +13,7 @@ import { renderUI } from "../helpers/index.js";
 
 const makeIncompleteTodoItem = makeTodoItem.bind(undefined, false);
 export function renderList() {
-    renderUI(
+    return renderUI(
         "functional",
         state
             .map(renderTodoItem)
@@ -25,17 +25,17 @@ export function renderList() {
 var state: TodoItem[] = [];
 
 export function initState(initialState: string[]) {
-    state = initialState.map(makeIncompleteTodoItem);
+    return state = initialState.map(makeIncompleteTodoItem);
 }
 
 export function addTodoItemToList(value: string) {
-    state = addItemToList(makeIncompleteTodoItem(value), state)
+    return state = addItemToList(makeIncompleteTodoItem(value), state)
 }
 
 export function removeTodoItemByIndex(index: number) {
-    state = removeItemAtIndex(index, state);
+    return state = removeItemAtIndex(index, state);
 }
 
 export function setTodoItemCompleteProperty(index: number, complete: boolean) {
-    state = todoSetComplete(complete, index, state);
+    return state = todoSetComplete(complete, index, state);
 }
