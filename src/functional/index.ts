@@ -1,3 +1,5 @@
+// Bridge with the outside world.
+
 import {
     TodoItem,
     makeTodoItem,

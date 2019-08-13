@@ -1,3 +1,5 @@
+// Clean, Pure, Sexy :D
+
 import { ITodoItem } from "../../contracts/index.js";
 export type TodoItem = ITodoItem;
 
